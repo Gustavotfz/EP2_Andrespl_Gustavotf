@@ -57,3 +57,12 @@ def aloca_navios (mapa, blocos):
     return mapa
 
 ##########################################################################
+
+def foi_derrotado (matriz):
+    for linha in matriz:
+        for item in linha:
+            if item == "N":
+                return False
+    return True
+
+##########################################################################
