@@ -62,3 +62,6 @@ CORES = {
     'cyan': '\u001b[36m',
     'white': '\u001b[37m'
 }
+
+# Relação para o Entre índice e o nome dos países
+NUMERO_PAISES = {1: 'Brasil', 2: 'França', 3: 'Austrália', 4: 'Rússia', 5: 'Japão'}
