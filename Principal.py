@@ -45,3 +45,5 @@ while game_status:
     print(titulo)
     print(msg_inicial)
     pais_computador = random.choice(list(PAISES.keys()))
+    print("Computador está alocando os navios de batalhado país",pais_computador+"...")
+    print("Computador já está em posição de batalha!")
