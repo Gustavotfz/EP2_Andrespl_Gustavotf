@@ -5,7 +5,7 @@ ROTEIRO DO JOGO
 4 - Apresentação da Equipe do Computador
 5 - Apresentação dos Possíveis Países de escolha do usuário
 6 - Escolha do Usuário
-7 - Criar Mapa
+7 - Criar Mapa do Computador e do Usuário
 8 - Alocar Navios do Computador
 9 - Adicionar, via escolha, os navios do Usuário
 10 - Iniciar Jogo
