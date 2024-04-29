@@ -33,10 +33,10 @@ while game_status:
         for i in range(PAISES[pais_computador][navio]):
             lista_blocos.append(CONFIGURACAO[navio])
     mapa_computador = aloca_navios(mapa_computador, lista_blocos)
-    c = mapa_computador
+    c = cria_mapa(10)
     j = mapa_jogador
 
-    framework = (f"""         COMPUTADOR - {pais_computador}                     JOGADOR - {NUMERO_PAISES[escolha_pais]}
+    framework = (f"""         COMPUTADOR - {pais_computador}                      JOGADOR - {NUMERO_PAISES[escolha_pais]}
       A  B  C  D  E  F  G  H  I  J            A  B  C  D  E  F  G  H  I  J
   1  {c[0][0]}{c[0][1]}{c[0][2]}{c[0][3]}{c[0][4]}{c[0][5]}{c[0][6]}{c[0][7]}{c[0][8]}{c[0][9]}  1    1  {j[0][0]}{j[0][1]}{j[0][2]}{j[0][3]}{j[0][4]}{j[0][5]}{j[0][6]}{j[0][7]}{j[0][8]}{j[0][9]}  1
   2  {c[1][0]}{c[1][1]}{c[1][2]}{c[1][3]}{c[1][4]}{c[1][5]}{c[1][6]}{c[1][7]}{c[1][8]}{c[1][9]}  2    2  {j[1][0]}{j[1][1]}{j[1][2]}{j[1][3]}{j[1][4]}{j[1][5]}{j[1][6]}{j[1][7]}{j[1][8]}{j[1][9]}  2
