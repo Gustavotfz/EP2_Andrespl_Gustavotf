@@ -7,10 +7,11 @@ ROTEIRO DO JOGO
 6 - Escolha do Usuário (feito)
 7 - Criar Mapa do Computador e do Usuário (feito)
 8 - Alocar Navios do Computador (feito)
-9 - Adicionar, via escolha, os navios do Usuário
-10 - Iniciar Jogo
-11 - Lance do Computador
-12 - Lance do Usuário
-13 - Repetir o Loop até alguém vencer
-14 - Animação de Vitória ou Derrota
-15 - Perguntar se quer jogar novamente
+9 - Gerar Framework do Jogo
+10 - Adicionar, via escolha, os navios do Usuário
+11 - Iniciar Jogo
+12 - Lance do Computador
+13 - Lance do Usuário
+14 - Repetir o Loop até alguém vencer
+15 - Animação de Vitória ou Derrota
+16 - Perguntar se quer jogar novamente
