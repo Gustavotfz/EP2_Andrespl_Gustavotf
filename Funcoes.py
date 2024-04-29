@@ -46,3 +46,11 @@ def foi_derrotado (matriz):
     return True
 
 ##########################################################################
+
+def posiciona_navios (mapa, blocos, linha, coluna, orientacao):
+    for i in range(blocos):
+        if orientacao == "v":
+            mapa[linha+i][coluna] = " N "
+        else:
+            mapa[linha][coluna+i] = " N "
+    return mapa
