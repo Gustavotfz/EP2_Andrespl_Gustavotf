@@ -144,7 +144,5 @@ while game_status:
         for i in range(PAISES[pais_computador][navio]):
             lista_blocos.append(CONFIGURACAO[navio])
     mapa_computador = aloca_navios(mapa_computador, lista_blocos)
-    for linha in mapa_computador:
-        print(linha)
     break
     
