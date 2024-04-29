@@ -27,7 +27,7 @@ while game_status:
 
     mapa_computador = cria_mapa(10)
     mapa_jogador = cria_mapa(10)
-    
+
     lista_blocos = []
     for navio in PAISES[pais_computador]:
         for i in range(PAISES[pais_computador][navio]):
@@ -52,6 +52,24 @@ while game_status:
 
 """)
     print(framework)
-    break
-
     
+    lista_navios = []
+    for x in PAISES[NUMERO_PAISES[escolha_pais]]:
+        for y in range(PAISES[NUMERO_PAISES[escolha_pais]][x]):
+            lista_navios.append(x)
+                               
+    for x in PAISES[NUMERO_PAISES[escolha_pais]]:
+        lista_navios.remove(x)
+        print('alocar: ' + x + '(' + str(CONFIGURACAO[x]) + ' blocos)')
+        print('próximos:' + str(lista_navios))
+
+        escolha_letra = input('\nInforme uma letra: ')
+        escolha_letra = escolha_letra.lower()
+        
+
+        escolha_linha = input('Informe a linha: ')
+        escolha_orientacao = input('Informe a orientação [h|v]: ')
+
+        if posicao_suporta(j,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao):
+            ############################
+            print('Navio alocado!')
