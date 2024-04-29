@@ -1,5 +1,4 @@
 #IMPORTS
-import random
 from Constantes import *
 from Funcoes import *
 ##########################################################################
@@ -8,7 +7,7 @@ game_status = True
 
 while game_status:
     titulo = " =====================================\n|                                     |\n| Bem-vindo ao INSPER - Batalha Naval |\n|                                     |\n =======   xxxxxxxxxxxxxxxxx   ======= \n"
-    msg_inicial = "Iniciando o Jogo!"
+    msg_inicial = "Iniciando o Jogo!\n"
     print(titulo)
     print(msg_inicial)
     pais_computador = random.choice(list(PAISES.keys()))
