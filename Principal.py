@@ -7,7 +7,7 @@ def cria_mapa(n):
 
 ##########################################################################
 
-def posicao_suporta(mapa,b,l,c,o):
+def posicao_suporta(mapa,blocos,linha,coluna,orientacao):
     if (orientacao == "h" and (coluna + blocos)>len(mapa)) or (orientacao == "v" and (linha + blocos)>len(mapa)) or (linha > len(mapa)-1) or (coluna > len(mapa)-1): 
         return False
     for i in range(blocos):
@@ -116,10 +116,8 @@ CORES = {
 
 ##########################################################################
 
-
-
-
 game_status = True
+
 while game_status:
     titulo = " =====================================\n|                                     |\n| Bem-vindo ao INSPER - Batalha Naval |\n|                                     |\n =======   xxxxxxxxxxxxxxxxx   ======= \n"
     msg_inicial = "Iniciando o Jogo!"

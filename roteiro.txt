@@ -1,12 +1,12 @@
 ROTEIRO DO JOGO
-1 - Título
-2 - Textos Introdutórios (Contextualização do Jogo)
-3 - Escolha do País do Computador
-4 - Apresentação da Equipe do Computador
-5 - Apresentação dos Possíveis Países de escolha do usuário
-6 - Escolha do Usuário
-7 - Criar Mapa do Computador e do Usuário
-8 - Alocar Navios do Computador
+1 - Título (feito)
+2 - Textos Introdutórios (Contextualização do Jogo) (feito)
+3 - Escolha do País do Computador (feito)
+4 - Apresentação da Equipe do Computador (feito)
+5 - Apresentação dos Possíveis Países de escolha do usuário (feito)
+6 - Escolha do Usuário (feito)
+7 - Criar Mapa do Computador e do Usuário (feito)
+8 - Alocar Navios do Computador (feito)
 9 - Adicionar, via escolha, os navios do Usuário
 10 - Iniciar Jogo
 11 - Lance do Computador
