@@ -1,6 +1,5 @@
 #IMPORTS
 import random
-
 ##########################################################################
 
 def cria_mapa(n):
@@ -118,6 +117,7 @@ PAISES =  {
 }
 
 NUMERO_PAISES = {1: 'Brasil', 2: 'França', 3: 'Austrália', 4: 'Rússia', 5: 'Japão'}
+
 # alfabeto para montar o nome das colunas
 ALFABETO = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
@@ -157,6 +157,8 @@ while game_status:
             b = '   ' + str(PAISES[z][y]) + ': ' + y
             print(b)
     
+    escolha_pais = int(input('Qual número da nação da sua frota?'))
+
     mapa_computador = cria_mapa(10)
     mapa_jogador = cria_mapa(10)
     lista_blocos = []
