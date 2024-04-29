@@ -64,10 +64,18 @@ while game_status:
         print('próximos:' + str(lista_navios))
 
         escolha_letra = input('\nInforme uma letra: ')
-        escolha_letra = escolha_letra.lower()
-        
+        escolha_letra = escolha_letra.upper()
+        while escolha_letra not in ALFABETO:
+            print('Letra inválida')
+            escolha_letra = input('\nInforme uma letra: ')
+            escolha_letra = escolha_letra.upper()
 
         escolha_linha = input('Informe a linha: ')
+        while escolha_linha not in NUMEROS:
+            print('Linha inválida')
+            escolha_linha = input('Informe a linha: ')
+            
+
         escolha_orientacao = input('Informe a orientação [h|v]: ')
 
         if posicao_suporta(j,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao):
