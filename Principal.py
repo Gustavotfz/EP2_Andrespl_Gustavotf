@@ -8,26 +8,15 @@ def cria_mapa(n):
 ##########################################################################
 
 def posicao_suporta(mapa,b,l,c,o):
-    if mapa[l][c] == ' ':
-        if o == 'v':
-            for x in range(b):
-                if l + x >= (len(mapa)):
-                    return False
-                elif mapa[l+x][c] == ' ':
-                    continue
-                else:
-                    return False
-        else:
-            for x in range(b):
-                if c + x >= len(mapa[l]):
-                    return False
-                elif mapa[l][c+x] == ' ':
-                    continue
-                else:
-                    return False
-    else:
+    if (orientacao == "h" and (coluna + blocos)>len(mapa)) or (orientacao == "v" and (linha + blocos)>len(mapa)) or (linha > len(mapa)-1) or (coluna > len(mapa)-1): 
         return False
-    
+    for i in range(blocos):
+        if orientacao == "v":
+            if (mapa[linha+i][coluna] != " " ):
+                return False
+        elif orientacao == "h":
+            if (mapa[linha][coluna+i] != " "):
+                return False      
     return True
 
 ##########################################################################
