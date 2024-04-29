@@ -7,7 +7,7 @@ ROTEIRO DO JOGO
  6 - Escolha do Usuário (feito)
  7 - Criar Mapa do Computador e do Usuário (feito)
  8 - Alocar Navios do Computador (feito)
- 9 - Gerar Framework do Jogo
+ 9 - Gerar Framework do Jogo (feito)
 10 - Adicionar, via escolha, os navios do Usuário
 11 - Iniciar Jogo
 12 - Lance do Computador
