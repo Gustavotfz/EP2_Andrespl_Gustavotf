@@ -38,6 +38,8 @@ PAISES =  {
     }
 }
 
+NUMERO_PAISES = {1: 'Brasil', 2: 'França', 3: 'Austrália', 4: 'Rússia', 5: 'Japão'}
+
 game_status = True
 while game_status:
     titulo = " =====================================\n|                                     |\n| Bem-vindo ao INSPER - Batalha Naval |\n|                                     |\n =======   xxxxxxxxxxxxxxxxx   ======= \n"
@@ -47,3 +49,15 @@ while game_status:
     pais_computador = random.choice(list(PAISES.keys()))
     print("Computador está alocando os navios de batalhado país",pais_computador+"...")
     print("Computador já está em posição de batalha!")
+
+    for x in NUMERO_PAISES:
+        a = str(x) + ': ' + NUMERO_PAISES[x]
+        print(a)
+        z = NUMERO_PAISES[x]
+        for y in PAISES[z]:
+            b = '   ' + str(PAISES[z][y]) + ': ' + y
+            print(b)
+    
+    break
+    
+
