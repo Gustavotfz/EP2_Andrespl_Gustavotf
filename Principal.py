@@ -159,6 +159,12 @@ while game_status:
     
     mapa_computador = cria_mapa(10)
     mapa_jogador = cria_mapa(10)
-
+    lista_blocos = []
+    for navio in PAISES[pais_computador]:
+        for i in range(PAISES[pais_computador][navio]):
+            lista_blocos.append(CONFIGURACAO[navio])
+    mapa_computador = aloca_navios(mapa_computador, lista_blocos)
+    for linha in mapa_computador:
+        print(linha)
     break
     
