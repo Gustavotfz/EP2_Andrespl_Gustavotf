@@ -48,8 +48,8 @@ PAISES =  {
 }
 
 # alfabeto para montar o nome das colunas
-ALFABETO = 'ABCDEFGHIJ'
-NUMEROS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+ALFABETO = ["A","B","C","D","E","F","G","H","I","J"]
+NUMEROS = ['1','2','3','4','5','6','7','8','9','10']
 
 # cores para o terminal
 CORES = {
