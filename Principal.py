@@ -1,6 +1,7 @@
 #IMPORTS
 from Constantes import *
 from Funcoes import *
+
 ##########################################################################
 
 game_status = True
@@ -22,7 +23,10 @@ while game_status:
             b = '   ' + str(PAISES[z][y]) + ': ' + y
             print(b)
     
-    escolha_pais = int(input('\nQual número da nação da sua frota?'))
+    escolha_pais = int(input("Qual o número da nação da sua frota? "))
+    while escolha_pais not in [i for i in range(1,6)]:
+        print("Opção inválida")
+        escolha_pais = int(input("Qual o número da nação da sua frota? "))
 
     mapa_computador = cria_mapa(10)
     mapa_jogador = cria_mapa(10)
@@ -66,7 +70,7 @@ while game_status:
         escolha_letra = escolha_letra.upper()
         while escolha_letra not in ALFABETO:
             print('Letra inválida')
-            escolha_letra = input('\nInforme uma letra: ')
+            escolha_letra = input('Informe uma letra: ')
             escolha_letra = escolha_letra.upper()
 
         escolha_linha = input('Informe a linha: ')
