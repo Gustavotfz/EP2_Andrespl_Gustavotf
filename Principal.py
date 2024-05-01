@@ -81,3 +81,5 @@ while game_status:
             j = posiciona_navios(j,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao)
             print('Navio alocado!')
             print(j)
+
+            
