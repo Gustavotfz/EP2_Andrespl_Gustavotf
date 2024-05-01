@@ -79,7 +79,7 @@ while game_status:
 
         escolha_orientacao = input('Informe a orientação [h|v]: ')
 
-        if posicao_suporta(j,CONFIGURACAO[navio],int(escolha_linha),escolha_letra,escolha_orientacao):
-            j = posiciona_navios(j,CONFIGURACAO[navio],int(escolha_linha),escolha_letra,escolha_orientacao)
+        if posicao_suporta(j,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
+            j = posiciona_navios(j,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
             print('Navio alocado!')
             print(j)
