@@ -66,12 +66,10 @@ while game_status:
         print('alocar: ' + x + '(' + str(CONFIGURACAO[x]) + ' blocos)')
         print('próximos:' + str(lista_navios))
 
-        escolha_letra = input('\nInforme uma letra: ')
-        escolha_letra = escolha_letra.upper()
+        escolha_letra = (input('\nInforme uma letra: ')).upper()
         while escolha_letra not in ALFABETO:
             print('Letra inválida')
-            escolha_letra = input('Informe uma letra: ')
-            escolha_letra = escolha_letra.upper()
+            escolha_letra = (input('\nInforme uma letra: ')).upper()
 
         escolha_linha = int(input('Informe a linha: '))
         while escolha_linha not in NUMEROS:
