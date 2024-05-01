@@ -74,6 +74,9 @@ while game_status:
 
         if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
             jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
-            print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
+            if lista_navios != []:
+                print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
+            else:
+                print(CORES["green"] + CORES["bold"] + 'Todos os navios foram alocados!' + CORES["reset"])
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
             print(framework)
