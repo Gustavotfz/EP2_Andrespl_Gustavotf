@@ -28,6 +28,8 @@ while game_status:
         print("Opção inválida")
         escolha_pais = int(input("\u001b[33;1mQual o número da nação da sua frota? " + CORES["reset"]))
 
+    print(separador)
+
     mapa_computador = cria_mapa(10)
     mapa_jogador = cria_mapa(10)
 
@@ -52,7 +54,6 @@ while game_status:
   9  {c[8][0]}{c[8][1]}{c[8][2]}{c[8][3]}{c[8][4]}{c[8][5]}{c[8][6]}{c[8][7]}{c[8][8]}{c[8][9]}  9    9  {j[8][0]}{j[8][1]}{j[8][2]}{j[8][3]}{j[8][4]}{j[8][5]}{j[8][6]}{j[8][7]}{j[8][8]}{j[7][9]}  9
  10  {c[9][0]}{c[9][1]}{c[9][2]}{c[9][3]}{c[9][4]}{c[9][5]}{c[9][6]}{c[9][7]}{c[9][8]}{c[9][9]}  10  10  {j[9][0]}{j[9][1]}{j[9][2]}{j[9][3]}{j[9][4]}{j[9][5]}{j[9][6]}{j[9][7]}{j[9][8]}{j[8][9]}  10
       A  B  C  D  E  F  G  H  I  J            A  B  C  D  E  F  G  H  I  J
-
 """)
     print(framework)
     
