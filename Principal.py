@@ -81,7 +81,7 @@ while game_status:
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
             print(framework)
         
-    print(CORES["cyan"] + "\nIniciando a " + CORES["bold"] + "Batalha Naval" + CORES["reset"])
+    print(CORES["cyan"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
 
     time.sleep(0.5)
     for numero in range(1,6):
