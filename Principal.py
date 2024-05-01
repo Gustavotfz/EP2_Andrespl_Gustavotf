@@ -82,4 +82,4 @@ while game_status:
         if posicao_suporta(j,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
             j = posiciona_navios(j,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
             print('Navio alocado!')
-            print(j)
+            print(framework)
