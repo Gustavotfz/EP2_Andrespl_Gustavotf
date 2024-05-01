@@ -82,7 +82,7 @@ while game_status:
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
             print(framework)
         
-    print(CORES["cyan"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
+    print(CORES["cyan"] + CORES["underline"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
 
     if posicao_suporta(jogador, CONFIGURACAO[navio], escolha_linha, LETRAS_NUMEROS[escolha_letra], escolha_orientacao):
         jogador = posiciona_navios(jogador, CONFIGURACAO[navio], escolha_linha, LETRAS_NUMEROS[escolha_letra], escolha_orientacao)
