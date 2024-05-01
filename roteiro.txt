@@ -15,3 +15,7 @@ ROTEIRO DO JOGO
 14 - Repetir o Loop até alguém vencer
 15 - Animação de Vitória ou Derrota
 16 - Perguntar se quer jogar novamente
+17 - Adicionar Cores às mensagens do Terminal
+18 - Adicionar Timer de delay dos prints
+19 - Adicionar métodos para conferir os inputs dos Usuários
+20 - Comentar o Código
