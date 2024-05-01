@@ -63,9 +63,9 @@ while game_status:
                                
     for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
         lista_navios.remove(navio)
-        print('alocar: ' + navio + '(' + str(CONFIGURACAO[navio]) + ' blocos)')
+        print('ALOCAR:', navio, '(' + str(CONFIGURACAO[navio]) + ' blocos)')
         navios_disponiveis = ", ".join(lista_navios)
-        print('próximos:', navios_disponiveis)
+        print('PRÓXIMOS:', navios_disponiveis)
 
         escolha_letra = (input('\nInforme uma letra: ')).upper()
         while escolha_letra not in ALFABETO:
