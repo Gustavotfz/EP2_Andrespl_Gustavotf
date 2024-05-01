@@ -1,49 +1,49 @@
 # quantidade de blocos por modelo de navio
 CONFIGURACAO = {
-    'destroyer': 3,
-    'porta-avioes': 5,
-    'submarino': 2,
-    'torpedeiro': 3,
-    'cruzador': 2,
-    'couracado': 4
+    'Destroyer': 3,
+    'Porta-avioes': 5,
+    'Submarino': 2,
+    'Torpedeiro': 3,
+    'Cruzador': 2,
+    'Couraçado': 4
 }
 
 # frotas de cada pais
 PAISES =  {
     'Brasil': {
-        'cruzador': 1,
-        'torpedeiro': 2,
-        'destroyer': 1,
-        'couracado': 1,
-        'porta-avioes': 1
+        'Cruzador': 1,
+        'Torpedeiro': 2,
+        'Destroyer': 1,
+        'Couraçado': 1,
+        'Porta-aviões': 1
     }, 
     'França': {
-        'cruzador': 3, 
-        'porta-avioes': 1, 
-        'destroyer': 1, 
-        'submarino': 1, 
+        'Cruzador': 3, 
+        'Porta-aviões': 1, 
+        'Destroyer': 1, 
+        'Submarino': 1, 
         'couracado': 1
     },
     'Austrália': {
-        'couracado': 1,
-        'cruzador': 3, 
-        'submarino': 1,
-        'porta-avioes': 1, 
-        'torpedeiro': 1
+        'Couraçado': 1,
+        'Cruzador': 3, 
+        'Submarino': 1,
+        'Porta-aviões': 1, 
+        'Torpedeiro': 1
     },
     'Rússia': {
-        'cruzador': 1,
-        'porta-avioes': 1,
-        'couracado': 2,
-        'destroyer': 1,
-        'submarino': 1
+        'Cruzador': 1,
+        'Porta-aviões': 1,
+        'Couraçado': 2,
+        'Destroyer': 1,
+        'Submarino': 1
     },
     'Japão': {
-        'torpedeiro': 2,
-        'cruzador': 1,
-        'destroyer': 2,
-        'couracado': 1,
-        'submarino': 1
+        'Torpedeiro': 2,
+        'Cruzador': 1,
+        'Destroyer': 2,
+        'Couraçado': 1,
+        'Submarino': 1
     }
 }
 
