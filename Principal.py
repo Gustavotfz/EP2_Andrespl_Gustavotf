@@ -21,12 +21,12 @@ while game_status:
         print(Numero_Pais)
         pais = NUMERO_PAISES[Numero]
         for navio in PAISES[pais]:
-            quantidade_navio = '   ' +  str(PAISES[pais][navio]) + ': ' + navio
+            quantidade_navio = '   ' +  str(PAISES[pais][navio]) + ': ' + CORES["blue"] + navio + CORES["reset"]
             print(quantidade_navio)
     
     escolha_pais = input(CORES["bold"] + CORES["yellow"] + "\nQual o número da nação da sua frota? " + CORES["reset"])
     while int(escolha_pais) not in [numero for numero in range(1,6)]:
-        print("Opção inválida")
+        print(CORES["red"] + "Opção inválida" + CORES["reset"])
         escolha_pais = input(CORES["bold"] + CORES["yellow"] + "\nQual o número da nação da sua frota? " + CORES["reset"])
     escolha_pais = int(escolha_pais)
 
@@ -57,24 +57,23 @@ while game_status:
         navios_disponiveis = ", ".join(lista_navios)
         print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS:'+CORES["reset"], navios_disponiveis)
 
-        escolha_letra = (input('\nInforme uma letra: ')).upper()
+        escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
         while escolha_letra not in ALFABETO:
-            print('Letra inválida')
-            escolha_letra = (input('\nInforme uma letra: ')).upper()
+            print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+            escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
 
-        escolha_linha = input('Informe a linha: ')
+        escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
         while escolha_linha not in NUMEROS:
-            print('Linha inválida')
-            escolha_linha = input('Informe a linha: ')
+            print(CORES["red"] + 'Linha inválida' + CORES["reset"])
+            escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
             
-
-        escolha_orientacao = (input('Informe a orientação [h|v]: ')).upper()
+        escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
         while escolha_orientacao not in ["H","V"]:
-            print('Orientação inválida')
-            escolha_linha = (input('Informe a orientação [h|v]: ')).upper()
+            print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
+            escolha_linha = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
 
         if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
             jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
-            print('Navio alocado!')
+            print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
             print(framework)
