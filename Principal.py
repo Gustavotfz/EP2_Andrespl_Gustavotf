@@ -1,6 +1,8 @@
 #IMPORTS
 from Funcoes import *
+from Constantes import *
 import time
+import random
 ##########################################################################
 
 game_status = True
@@ -40,7 +42,7 @@ while game_status:
     computador = cria_mapa(10)
     jogador = mapa_jogador
 
-    framework = gera_framework(computador, jogador)
+    framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
     print(framework)
     
     lista_navios = []
@@ -73,5 +75,5 @@ while game_status:
         if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
             jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
             print('Navio alocado!')
-            framework = gera_framework(computador, jogador)
+            framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
             print(framework)

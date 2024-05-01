@@ -58,7 +58,7 @@ def posiciona_navios (mapa, blocos, linha, coluna, orientacao):
 
 ##########################################################################
 
-def gera_framework (c, j):
+def gera_framework (c, j, pais_computador, escolha_pais):
     return (f"""\n         {CORES["underline"]+CORES["bold"]}COMPUTADOR{CORES["reset"]} - {CORES["red"] + str(pais_computador) + CORES["reset"]}                      {CORES["underline"]+CORES["bold"]}JOGADOR{CORES["reset"]} - {CORES["cyan"] + str(NUMERO_PAISES[escolha_pais]) + CORES["reset"]}
       A  B  C  D  E  F  G  H  I  J            A  B  C  D  E  F  G  H  I  J
   1  {c[0][0]}{c[0][1]}{c[0][2]}{c[0][3]}{c[0][4]}{c[0][5]}{c[0][6]}{c[0][7]}{c[0][8]}{c[0][9]}  1    1  {j[0][0]}{j[0][1]}{j[0][2]}{j[0][3]}{j[0][4]}{j[0][5]}{j[0][6]}{j[0][7]}{j[0][8]}{j[0][9]}  1
