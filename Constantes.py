@@ -69,3 +69,4 @@ CORES = {
 
 # Relação para o Entre índice e o nome dos países
 NUMERO_PAISES = {1: 'Brasil', 2: 'França', 3: 'Austrália', 4: 'Rússia', 5: 'Japão'}
+LETRAS_NUMEROS = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6, "H": 7, "I": 8, "J": 9}
