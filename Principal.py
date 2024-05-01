@@ -7,13 +7,13 @@ from Funcoes import *
 game_status = True
 
 while game_status:
-    titulo = " =====================================\n|                                     |\n| Bem-vindo ao INSPER - Batalha Naval |\n|                                     |\n =======   xxxxxxxxxxxxxxxxx   ======= \n"
-    msg_inicial = "Iniciando o Jogo!\n"
-    print(titulo)
-    print(msg_inicial)
+    titulo = u"\u001b[36;1m =====================================\n|                                     |\n| Bem-vindo ao INSPER - Batalha Naval |\n|                                     |\n =======   xxxxxxxxxxxxxxxxx   ======= \n"
+    msg_inicial = u"\u001b[33;1m\u001b[1mIniciando o Jogo!\n"
+    print (titulo, CORES["reset"])
+    print(msg_inicial, CORES["reset"]) 
     pais_computador = random.choice(list(PAISES.keys()))
-    print("Computador está alocando os navios de batalhado país",pais_computador+"...")
-    print("Computador já está em posição de batalha!\n")
+    print("\u001b[35;1mComputador está alocando os navios de batalhado país","\u001b[37;1m"+pais_computador+"...")
+    print("\u001b[35;1mComputador já está em posição de batalha!\n",CORES["reset"])
 
     for x in NUMERO_PAISES:
         a = str(x) + ': ' + NUMERO_PAISES[x]
