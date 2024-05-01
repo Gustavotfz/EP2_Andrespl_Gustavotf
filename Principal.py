@@ -24,10 +24,10 @@ while game_status:
             b = '   ' +  str(PAISES[z][y]) + ': ' + y
             print(b)
     
-    escolha_pais = int(input("\n\u001b[33;1mQual o número da nação da sua frota? " + CORES["reset"]))
+    escolha_pais = int(input(CORES["bold"] + CORES["yellow"] + "\nQual o número da nação da sua frota?" + CORES["reset"]))
     while escolha_pais not in [numero for numero in range(1,6)]:
         print("Opção inválida")
-        escolha_pais = int(input("\u001b[33;1mQual o número da nação da sua frota? " + CORES["reset"]))
+        escolha_pais = int(input(CORES["bold"] + CORES["yellow"] + "\nQual o número da nação da sua frota?" + CORES["reset"]))
 
     print(separador)
 
