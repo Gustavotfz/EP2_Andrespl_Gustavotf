@@ -84,9 +84,9 @@ while game_status:
     print(CORES["cyan"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
 
     if posicao_suporta(j,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao):
-            j = posiciona_navios(j,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao)
-            print('Navio alocado!')
-            print(j)
+        jogador = posiciona_navios(jogador,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao)
+        print('Navio alocado!')
+        print(j)
             
     time.sleep(0.5)
     for numero in range(1,6):
