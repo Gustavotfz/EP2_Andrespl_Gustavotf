@@ -71,10 +71,10 @@ while game_status:
             print('Letra inválida')
             escolha_letra = (input('\nInforme uma letra: ')).upper()
 
-        escolha_linha = int(input('Informe a linha: '))
+        escolha_linha = input('Informe a linha: ')
         while escolha_linha not in NUMEROS:
             print('Linha inválida')
-            escolha_linha = int(input('Informe a linha: '))
+            escolha_linha = input('Informe a linha: ')
             
 
         escolha_orientacao = input('Informe a orientação [h|v]: ')
