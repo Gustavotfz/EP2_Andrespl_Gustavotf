@@ -1,7 +1,7 @@
 # quantidade de blocos por modelo de navio
 CONFIGURACAO = {
     'Destroyer': 3,
-    'Porta-avioes': 5,
+    'Porta-aviões': 5,
     'Submarino': 2,
     'Torpedeiro': 3,
     'Cruzador': 2,
