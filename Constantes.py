@@ -22,7 +22,7 @@ PAISES =  {
         'Porta-aviões': 1, 
         'Destroyer': 1, 
         'Submarino': 1, 
-        'couracado': 1
+        'Couraçado': 1
     },
     'Austrália': {
         'Couraçado': 1,
