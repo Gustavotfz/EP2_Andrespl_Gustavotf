@@ -16,13 +16,13 @@ while game_status:
     print(CORES["magenta"] + "Computador está alocando os navios de batalhado país", CORES["bold"]+CORES["underline"]+CORES["red"] + pais_computador + CORES["reset"] + CORES["magenta"] + " ..." + CORES["reset"])
     print(CORES["magenta"] + "Computador já está em posição de batalha!\n" + CORES["reset"])
 
-    for x in NUMERO_PAISES:
-        a = "\u001b[1m" + str(x) + ': ' + "\u001b[36;1m\u001b[4m" + NUMERO_PAISES[x] + CORES["reset"]
-        print(a)
-        z = NUMERO_PAISES[x]
-        for y in PAISES[z]:
-            b = '   ' +  str(PAISES[z][y]) + ': ' + y
-            print(b)
+    for Numero in NUMERO_PAISES:
+        Numero_Pais = CORES["bold"] + str(Numero) + ': ' + CORES["cyan"] + CORES["underline"] + NUMERO_PAISES[Numero] + CORES["reset"]
+        print(Numero_Pais)
+        pais = NUMERO_PAISES[Numero]
+        for navio in PAISES[pais]:
+            quantidade_navio = '   ' +  str(PAISES[pais][navio]) + ': ' + navio
+            print(quantidade_navio)
     
     escolha_pais = int(input(CORES["bold"] + CORES["yellow"] + "\nQual o número da nação da sua frota?" + CORES["reset"]))
     while escolha_pais not in [numero for numero in range(1,6)]:
@@ -36,7 +36,7 @@ while game_status:
 
     lista_blocos = []
     for navio in PAISES[pais_computador]:
-        for i in range(PAISES[pais_computador][navio]):
+        for numero_navio in range(PAISES[pais_computador][navio]):
             lista_blocos.append(CONFIGURACAO[navio])
     mapa_computador = aloca_navios(mapa_computador, lista_blocos)
     computador = cria_mapa(10)
@@ -47,7 +47,7 @@ while game_status:
     
     lista_navios = []
     for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
-        for y in range(PAISES[NUMERO_PAISES[escolha_pais]][navio]):
+        for numero_navio in range(PAISES[NUMERO_PAISES[escolha_pais]][navio]):
             lista_navios.append(navio)
                                
     for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
