@@ -41,7 +41,7 @@ while game_status:
     c = cria_mapa(10)
     j = mapa_jogador
 
-    framework = (f"""\n         COMPUTADOR - {pais_computador}                      JOGADOR - {NUMERO_PAISES[escolha_pais]}
+    framework = (f"""\n         {CORES["underline"]+CORES["bold"]}COMPUTADOR{CORES["reset"]} - {CORES["red"] + str(pais_computador) + CORES["reset"]}                      {CORES["underline"]+CORES["bold"]}JOGADOR{CORES["reset"]} - {CORES["cyan"] + str(NUMERO_PAISES[escolha_pais]) + CORES["reset"]}
       A  B  C  D  E  F  G  H  I  J            A  B  C  D  E  F  G  H  I  J
   1  {c[0][0]}{c[0][1]}{c[0][2]}{c[0][3]}{c[0][4]}{c[0][5]}{c[0][6]}{c[0][7]}{c[0][8]}{c[0][9]}  1    1  {j[0][0]}{j[0][1]}{j[0][2]}{j[0][3]}{j[0][4]}{j[0][5]}{j[0][6]}{j[0][7]}{j[0][8]}{j[0][9]}  1
   2  {c[1][0]}{c[1][1]}{c[1][2]}{c[1][3]}{c[1][4]}{c[1][5]}{c[1][6]}{c[1][7]}{c[1][8]}{c[1][9]}  2    2  {j[1][0]}{j[1][1]}{j[1][2]}{j[1][3]}{j[1][4]}{j[1][5]}{j[1][6]}{j[1][7]}{j[1][8]}{j[1][9]}  2
@@ -64,9 +64,9 @@ while game_status:
                                
     for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
         lista_navios.remove(navio)
-        print(CORES["underline"]+'ALOCAR:'+CORES["reset"], navio, '(' + str(CONFIGURACAO[navio]) + ' blocos)')
+        print(CORES["bold"]+CORES["yellow"]+'ALOCAR:'+CORES["reset"], CORES["cyan"] + navio, CORES["reset"] + '(' + CORES["underline"] + str(CONFIGURACAO[navio]) +  ' blocos' + CORES["reset"] + ")")
         navios_disponiveis = ", ".join(lista_navios)
-        print(CORES["underline"]+'PRÓXIMOS:'+CORES["reset"], navios_disponiveis)
+        print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS:'+CORES["reset"], navios_disponiveis)
 
         escolha_letra = (input('\nInforme uma letra: ')).upper()
         while escolha_letra not in ALFABETO:
