@@ -9,13 +9,13 @@ def cria_mapa(n):
 ##########################################################################
 
 def posicao_suporta(mapa,blocos,linha,coluna,orientacao):
-    if (orientacao == "h" and (coluna + blocos)>len(mapa)) or (orientacao == "v" and (linha + blocos)>len(mapa)) or (linha > len(mapa)-1) or (coluna > len(mapa)-1): 
+    if (orientacao == "H" and (coluna + blocos)>len(mapa)) or (orientacao == "V" and (linha + blocos)>len(mapa)) or (linha > len(mapa)-1) or (coluna > len(mapa)-1): 
         return False
     for i in range(blocos):
-        if orientacao == "v":
+        if orientacao == "V":
             if (mapa[linha+i][coluna] != "   " ):
                 return False
-        elif orientacao == "h":
+        elif orientacao == "H":
             if (mapa[linha][coluna+i] != "   "):
                 return False      
     return True
@@ -27,13 +27,13 @@ def aloca_navios (mapa, blocos):
     while pecas < len(blocos):
         linha = random.randint(0, len(mapa)-1)
         coluna = random.randint(0, len(mapa)-1)
-        orientacao = random.choice(['h', 'v'])
+        orientacao = random.choice(['H', 'V'])
         if posicao_suporta(mapa,blocos[pecas],linha,coluna,orientacao):
             for i in range(blocos[pecas]):
-                if orientacao == "v":
-                    mapa[linha+i][coluna] = " N "
-                elif orientacao == "h":
-                    mapa[linha][coluna+i] = " N "
+                if orientacao == "V":
+                    mapa[linha+i][coluna] = CORES["green"] + "▓▓▓" + CORES["reset"]
+                elif orientacao == "H":
+                    mapa[linha][coluna+i] = CORES["green"] + "▓▓▓" + CORES["reset"]
             pecas += 1
     return mapa
 
@@ -42,7 +42,7 @@ def aloca_navios (mapa, blocos):
 def foi_derrotado (matriz):
     for linha in matriz:
         for item in linha:
-            if item == " N ":
+            if item == (CORES["green"] + "▓▓▓" + CORES["reset"]):
                 return False
     return True
 
@@ -50,10 +50,10 @@ def foi_derrotado (matriz):
 
 def posiciona_navios (mapa, blocos, linha, coluna, orientacao):
     for i in range(blocos):
-        if orientacao == "v":
-            mapa[linha+i][coluna] = " N "
-        else:
-            mapa[linha][coluna+i] = " N "
+        if orientacao == "V":
+            mapa[linha+i][coluna] = CORES["green"] + "▓▓▓" + CORES["reset"]
+        elif orientacao == "H":
+            mapa[linha][coluna+i] = CORES["green"] + "▓▓▓" + CORES["reset"]
     return mapa
 
 ##########################################################################

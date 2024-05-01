@@ -73,7 +73,7 @@ while game_status:
             escolha_linha = (input('Informe a orientação [h|v]: ')).upper()
 
         if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
-            jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
+            jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
             print('Navio alocado!')
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
             print(framework)
