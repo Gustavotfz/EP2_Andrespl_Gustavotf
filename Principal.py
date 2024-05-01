@@ -57,13 +57,13 @@ while game_status:
     print(framework)
     
     lista_navios = []
-    for x in PAISES[NUMERO_PAISES[escolha_pais]]:
-        for y in range(PAISES[NUMERO_PAISES[escolha_pais]][x]):
-            lista_navios.append(x)
+    for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
+        for y in range(PAISES[NUMERO_PAISES[escolha_pais]][navio]):
+            lista_navios.append(navio)
                                
-    for x in PAISES[NUMERO_PAISES[escolha_pais]]:
-        lista_navios.remove(x)
-        print('alocar: ' + x + '(' + str(CONFIGURACAO[x]) + ' blocos)')
+    for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
+        lista_navios.remove(navio)
+        print('alocar: ' + navio + '(' + str(CONFIGURACAO[navio]) + ' blocos)')
         print('próximos:' + str(lista_navios))
 
         escolha_letra = (input('\nInforme uma letra: ')).upper()
@@ -79,7 +79,7 @@ while game_status:
 
         escolha_orientacao = input('Informe a orientação [h|v]: ')
 
-        if posicao_suporta(j,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao):
-            j = posiciona_navios(j,CONFIGURACAO[x],escolha_linha,escolha_letra,escolha_orientacao)
+        if posicao_suporta(j,CONFIGURACAO[navio],int(escolha_linha),escolha_letra,escolha_orientacao):
+            j = posiciona_navios(j,CONFIGURACAO[navio],int(escolha_linha),escolha_letra,escolha_orientacao)
             print('Navio alocado!')
             print(j)
