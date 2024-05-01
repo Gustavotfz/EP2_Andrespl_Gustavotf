@@ -1,5 +1,6 @@
 #IMPORTS
 import random
+from Constantes import *
 ##########################################################################
 
 def cria_mapa(n):

@@ -1,7 +1,6 @@
 #IMPORTS
-from Constantes import *
 from Funcoes import *
-
+import time
 ##########################################################################
 
 game_status = True
