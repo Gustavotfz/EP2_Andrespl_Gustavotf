@@ -51,7 +51,6 @@ while game_status:
         for numero_navio in range(PAISES[NUMERO_PAISES[escolha_pais]][navio]):
             lista_navios.append(navio)
                                
-    print("lista navios:", lista_navios)
     for navio in lista_navios:
         lista_navios.remove(navio)
         print(CORES["bold"]+CORES["yellow"]+'ALOCAR:'+CORES["reset"], CORES["cyan"] + navio, CORES["reset"] + '(' + CORES["underline"] + str(CONFIGURACAO[navio]) +  ' blocos' + CORES["reset"] + ")")
@@ -73,7 +72,6 @@ while game_status:
             print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
             escolha_linha = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
 
-        print("lista navios:", lista_navios)
         if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
             jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
             if lista_navios != []:
