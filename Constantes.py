@@ -61,7 +61,10 @@ CORES = {
     'blue': '\u001b[34m',
     'magenta': '\u001b[35m',
     'cyan': '\u001b[36m',
-    'white': '\u001b[37m'
+    'white': '\u001b[37m',
+    'bold': '\u001b[1m',
+    'underline': '\u001b[4m',
+    'reversed': '\u001b[7m'
 }
 
 # Relação para o Entre índice e o nome dos países
