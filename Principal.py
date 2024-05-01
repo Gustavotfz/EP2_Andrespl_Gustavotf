@@ -78,7 +78,10 @@ while game_status:
             escolha_linha = input('Informe a linha: ')
             
 
-        escolha_orientacao = input('Informe a orientação [h|v]: ')
+        escolha_orientacao = (input('Informe a orientação [h|v]: ')).upper()
+        while escolha_orientacao not in ["H","V"]:
+            print('Orientação inválida')
+            escolha_linha = (input('Informe a orientação [h|v]: ')).upper()
 
         if posicao_suporta(j,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
             j = posiciona_navios(j,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
