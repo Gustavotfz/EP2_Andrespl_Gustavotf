@@ -57,30 +57,35 @@ while game_status:
         navios_disponiveis = ", ".join(lista_navios)
         print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS:'+CORES["reset"], navios_disponiveis)
 
-        escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
-        while escolha_letra not in ALFABETO:
-            print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+        suporta = False#
+        while suporta == False:#
             escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
+            while escolha_letra not in ALFABETO:
+                print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+                escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
 
-        escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
-        while escolha_linha not in NUMEROS:
-            print(CORES["red"] + 'Linha inválida' + CORES["reset"])
             escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
-        escolha_linha = int(escolha_linha)
-            
-        escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
-        while escolha_orientacao not in ["H","V"]:
-            print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
-            escolha_linha = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
+            while escolha_linha not in NUMEROS:
+                print(CORES["red"] + 'Linha inválida' + CORES["reset"])
+                escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
+            escolha_linha = int(escolha_linha)
+                
+            escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
+            while escolha_orientacao not in ["H","V"]:
+                print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
+                escolha_linha = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
 
-        if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
-            jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
-            if lista_navios != []:
-                print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
-            else:
-                print(CORES["green"] + CORES["bold"] + 'Todos os navios foram alocados!' + CORES["reset"])
-            framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
-            print(framework)
+            if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
+                jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
+                if lista_navios != []:
+                    print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
+                else:
+                    print(CORES["green"] + CORES["bold"] + 'Todos os navios foram alocados!' + CORES["reset"])
+                framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
+                print(framework)
+                suporta = True#
+            else:#
+                print('Não foi possível alocar navio em ' + escolha_letra + escolha_linha + escolha_orientacao + ' !')#
         
     print(CORES["cyan"] + CORES["underline"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
   
