@@ -101,7 +101,7 @@ while game_status:
         numero_da_letra_disparo = LETRAS_NUMEROS[letra_disparo]
 
         linha_disparo = input('Linha: ')
-        while linha_disparo not in NUMERO_PAISES:
+        while linha_disparo not in NUMEROS:
             print(CORES["red"] + 'Linha inválida' + CORES["reset"])
             letra_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
 
