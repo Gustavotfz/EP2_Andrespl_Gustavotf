@@ -50,12 +50,14 @@ while game_status:
     for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
         for numero_navio in range(PAISES[NUMERO_PAISES[escolha_pais]][navio]):
             lista_navios.append(navio)
-                               
-    for navio in lista_navios:
-        lista_navios.remove(navio)
-        print(CORES["bold"]+CORES["yellow"]+'ALOCAR:'+CORES["reset"], CORES["cyan"] + navio, CORES["reset"] + '(' + CORES["underline"] + str(CONFIGURACAO[navio]) +  ' blocos' + CORES["reset"] + ")")
-        navios_disponiveis = ", ".join(lista_navios)
-        print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS:'+CORES["reset"], navios_disponiveis)
+
+    navios_alocar = lista_navios                
+    for n_navio in range(len(lista_navios)):
+        navio_alocando = lista_navios[0]
+        print(CORES["bold"]+CORES["yellow"]+'ALOCAR: '+CORES["reset"], CORES["cyan"] + lista_navios[0], CORES["reset"] + '(' + CORES["underline"] + str(CONFIGURACAO[lista_navios[0]]) +  ' blocos' + CORES["reset"] + ")")
+        navios_alocar.remove(navios_alocar[0])
+        navios_disponiveis = ", ".join(navios_alocar)
+        print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS: '+CORES["reset"], navios_disponiveis)
 
         suporta = False#
         while suporta == False:#
@@ -75,8 +77,8 @@ while game_status:
                 print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
                 escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
 
-            if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
-                jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
+            if posicao_suporta(jogador,CONFIGURACAO[navio_alocando],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
+                jogador = posiciona_navios(jogador,CONFIGURACAO[navio_alocando],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
                 if lista_navios != []:
                     print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
                 else:
