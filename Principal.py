@@ -57,7 +57,8 @@ while game_status:
         print(CORES["bold"]+CORES["yellow"]+'ALOCAR: '+CORES["reset"], CORES["cyan"] + lista_navios[0], CORES["reset"] + '(' + CORES["underline"] + str(CONFIGURACAO[lista_navios[0]]) +  ' blocos' + CORES["reset"] + ")")
         navios_alocar.remove(navios_alocar[0])
         navios_disponiveis = ", ".join(navios_alocar)
-        print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS: '+CORES["reset"], navios_disponiveis)
+        if navios_alocar != []:
+            print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS: '+CORES["reset"], navios_disponiveis)
 
         suporta = False#
         while suporta == False:#
@@ -114,7 +115,7 @@ while game_status:
                 print(CORES["red"] + 'Linha inválida' + CORES["reset"])
                 linha_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
 
-            if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]) or mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["red"] + "▓▓▓" + CORES["reset"]):#
+            if computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]) or mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["red"] + "▓▓▓" + CORES["reset"]):#
                 print ('Posição ' + letra_disparo + str(linha_disparo) + ' já bombardeada!')#
             else:#
                 tiro_autorizado = True#
