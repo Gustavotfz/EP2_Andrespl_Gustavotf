@@ -134,12 +134,14 @@ while game_status:
         vitoria = foi_derrotado(mapa_computador)
         if vitoria == True:
             print('Você venceu!')
-            print('Já temos o futuro Jack Sparrow Jr!')
+            print(pirata_da_vitoria)
+            #print('Já temos o futuro Jack Sparrow Jr!')
             rodada = False
 
         derrota = foi_derrotado(jogador)
         if derrota == True:
             print('Você perdeu!')
+            print(cara_triste_de_derrota)
             print('Pena, mais sorte da próxima vez!')
             rodada = False
 
