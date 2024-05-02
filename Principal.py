@@ -89,33 +89,47 @@ while game_status:
         time.sleep(0.5)
         print(6 - numero)
     
-    while '?': #DUVIDA
+    rodada = True
+    while rodada:
         print('Coordenadas do seu disparo')
         letra_disparo = input('Letra: ')
+        letra_disparo = letra_disparo.upper()
+        numero_da_letra_disparo = LETRAS_NUMEROS[letra_disparo]
         linha_disparo = input('Linha: ')
 
         letra_disparo_computador = random.choice(ALFABETO)
+        letra_disparo_computador = letra_disparo_computador.upper()
+        numero_da_letra_disparo_computador = LETRAS_NUMEROS[letra_disparo_computador]
         linha_disparo_computador = random.choice(NUMEROS)
 
-        if '?': #NAVIO COMPUTADOR ATINGIDO #DUVIDA 
+        if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO COMPUTADOR ATINGIDO
             print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     BOOOOMMMMM!!!!')
-
+            mapa_computador[int(linha_disparo)-1][letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
         else:
             print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     Água!')
 
-        if jogador[linha_disparo_computador][letra_disparo_computador] == "▓▓▓": #NAVIO JOGADOR ATINGIDO #DUVIDA
+        if jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO JOGADOR ATINGIDO
             print('Computador ------>>>>>>>   ' + letra_disparo_computador+linha_disparo_computador + '     BOOOOMMMMM!!!!')
-            jogador[linha_disparo_computador][letra_disparo_computador] = CORES["red"] + "▓▓▓" + CORES["reset"]
+            jogador[int(linha_disparo_computador)-1][letra_disparo_computador] = CORES["red"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
         else:
             print('Computador ------>>>>>>>   ' + letra_disparo_computador+linha_disparo_computador + '     Água!')
 
+        vitoria = foi_derrotado(mapa_computador)
+        if vitoria == True:
+            print('Você venceu!')
+            print('Já temos o futuro Jack Sparrow Jr!')
+            rodada = False
+
+        derrota = foi_derrotado(jogador)
+        if derrota == True:
+            print('Você perdeu!')
+            print('Pena, mais sorte da próxima vez!')
+            rodada = False
+        
         print(framework)
-                  
-    print('Você venceu!')
-    print('Já temos o futuro Jack Sparrow Jr!')
 
     jogar_novamente = input('Jogar novamente? [s|n] ')
     if jogar_novamente == 'n':
-        game_status = False
         print('Até a próxima!')
+        game_status = False
