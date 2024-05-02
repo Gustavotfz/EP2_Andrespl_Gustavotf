@@ -99,8 +99,8 @@ while game_status:
     while rodada:
         print('Coordenadas do seu disparo')
 
-        tiro_autorizado = False
-        while tiro_autorizado == False:
+        tiro_autorizado = False#
+        while tiro_autorizado == False:#
             letra_disparo = (input(CORES["yellow"] + 'Letra: ' + CORES["reset"])).upper()
             while letra_disparo not in ALFABETO:
                 print(CORES["red"] + 'Letra inválida' + CORES["reset"])
@@ -112,10 +112,10 @@ while game_status:
                 print(CORES["red"] + 'Linha inválida' + CORES["reset"])
                 letra_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
 
-            if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]) or mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]):
-                print ('Posição' + letra_disparo + str(linha_disparo) 'já bombardeada!')
-            else:
-                tiro_autorizado = True
+            if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]) or mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["red"] + "▓▓▓" + CORES["reset"]):#
+                print ('Posição ' + letra_disparo + str(linha_disparo) + ' já bombardeada!')#
+            else:#
+                tiro_autorizado = True#
 
         letra_disparo_computador = random.choice(ALFABETO)
         letra_disparo_computador = letra_disparo_computador.upper()
