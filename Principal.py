@@ -73,7 +73,7 @@ while game_status:
             escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
             while escolha_orientacao not in ["H","V"]:
                 print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
-                escolha_linha = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
+                escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
 
             if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
                 jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
@@ -110,7 +110,7 @@ while game_status:
             linha_disparo = input('Linha: ')
             while linha_disparo not in NUMEROS:
                 print(CORES["red"] + 'Linha inválida' + CORES["reset"])
-                letra_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
+                linha_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
 
             if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]) or mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["red"] + "▓▓▓" + CORES["reset"]):#
                 print ('Posição ' + letra_disparo + str(linha_disparo) + ' já bombardeada!')#
