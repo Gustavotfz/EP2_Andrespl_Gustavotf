@@ -83,14 +83,39 @@ while game_status:
             print(framework)
         
     print(CORES["cyan"] + CORES["underline"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
-
-    if posicao_suporta(jogador, CONFIGURACAO[navio], escolha_linha, LETRAS_NUMEROS[escolha_letra], escolha_orientacao):
-        jogador = posiciona_navios(jogador, CONFIGURACAO[navio], escolha_linha, LETRAS_NUMEROS[escolha_letra], escolha_orientacao)
-        print('Navio alocado!')
-            
+  
     time.sleep(0.5)
     for numero in range(1,6):
         time.sleep(0.5)
         print(6 - numero)
     
-    break
+    while '?': #DUVIDA
+        print('Coordenadas do seu disparo')
+        letra_disparo = input('Letra: ')
+        linha_disparo = input('Linha: ')
+
+        letra_disparo_computador = random.choice(ALFABETO)
+        linha_disparo_computador = random.choice(NUMEROS)
+
+        if '?': #NAVIO COMPUTADOR ATINGIDO #DUVIDA 
+            print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     BOOOOMMMMM!!!!')
+
+        else:
+            print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     Água!')
+
+        if jogador[linha_disparo_computador][letra_disparo_computador] == "▓▓▓": #NAVIO JOGADOR ATINGIDO #DUVIDA
+            print('Computador ------>>>>>>>   ' + letra_disparo_computador+linha_disparo_computador + '     BOOOOMMMMM!!!!')
+            jogador[linha_disparo_computador][letra_disparo_computador] = CORES["red"] + "▓▓▓" + CORES["reset"]
+            framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
+        else:
+            print('Computador ------>>>>>>>   ' + letra_disparo_computador+linha_disparo_computador + '     Água!')
+
+        print(framework)
+                  
+    print('Você venceu!')
+    print('Já temos o futuro Jack Sparrow Jr!')
+
+    jogar_novamente = input('Jogar novamente? [s|n] ')
+    if jogar_novamente == 'n':
+        game_status = False
+        print('Até a próxima!')
