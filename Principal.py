@@ -85,7 +85,7 @@ while game_status:
                 print(framework)
                 suporta = True#
             else:#
-                print('Não foi possível alocar navio em ' + escolha_letra + escolha_linha + escolha_orientacao + ' !')#
+                print('Não foi possível alocar navio em ' + escolha_letra + str(escolha_linha) + escolha_orientacao + ' !')#
         
     print(CORES["cyan"] + CORES["underline"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
   
@@ -99,16 +99,23 @@ while game_status:
     while rodada:
         print('Coordenadas do seu disparo')
 
-        letra_disparo = (input(CORES["yellow"] + 'Letra: ' + CORES["reset"])).upper()
-        while letra_disparo not in ALFABETO:
-            print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+        tiro_autorizado = False
+        while tiro_autorizado == False:
             letra_disparo = (input(CORES["yellow"] + 'Letra: ' + CORES["reset"])).upper()
-        numero_da_letra_disparo = LETRAS_NUMEROS[letra_disparo]
+            while letra_disparo not in ALFABETO:
+                print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+                letra_disparo = (input(CORES["yellow"] + 'Letra: ' + CORES["reset"])).upper()
+            numero_da_letra_disparo = LETRAS_NUMEROS[letra_disparo]
 
-        linha_disparo = input('Linha: ')
-        while linha_disparo not in NUMEROS:
-            print(CORES["red"] + 'Linha inválida' + CORES["reset"])
-            letra_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
+            linha_disparo = input('Linha: ')
+            while linha_disparo not in NUMEROS:
+                print(CORES["red"] + 'Linha inválida' + CORES["reset"])
+                letra_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
+
+            if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]) or mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]):
+                print ('Posição' + letra_disparo + str(linha_disparo) 'já bombardeada!')
+            else:
+                tiro_autorizado = True
 
         letra_disparo_computador = random.choice(ALFABETO)
         letra_disparo_computador = letra_disparo_computador.upper()
