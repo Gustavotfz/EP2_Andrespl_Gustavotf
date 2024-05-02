@@ -46,7 +46,7 @@ while game_status:
     framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
     print(framework)
     
-    lista_navios = [] #
+    lista_navios = []
     for navio in PAISES[NUMERO_PAISES[escolha_pais]]:
         for numero_navio in range(PAISES[NUMERO_PAISES[escolha_pais]][navio]):
             lista_navios.append(navio)
