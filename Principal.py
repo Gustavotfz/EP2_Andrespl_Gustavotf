@@ -57,30 +57,35 @@ while game_status:
         navios_disponiveis = ", ".join(lista_navios)
         print(CORES["bold"]+CORES["yellow"]+'PRÓXIMOS:'+CORES["reset"], navios_disponiveis)
 
-        escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
-        while escolha_letra not in ALFABETO:
-            print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+        suporta = False#
+        while suporta == False:#
             escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
+            while escolha_letra not in ALFABETO:
+                print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+                escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
 
-        escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
-        while escolha_linha not in NUMEROS:
-            print(CORES["red"] + 'Linha inválida' + CORES["reset"])
             escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
-        escolha_linha = int(escolha_linha)
-            
-        escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
-        while escolha_orientacao not in ["H","V"]:
-            print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
-            escolha_linha = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
+            while escolha_linha not in NUMEROS:
+                print(CORES["red"] + 'Linha inválida' + CORES["reset"])
+                escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
+            escolha_linha = int(escolha_linha)
+                
+            escolha_orientacao = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
+            while escolha_orientacao not in ["H","V"]:
+                print(CORES["red"] + 'Orientação inválida' + CORES["reset"])
+                escolha_linha = (input(CORES["yellow"] + 'Informe a orientação ' + CORES["bold"] + CORES["underline"] + '[h|v]' + CORES["reset"] + CORES["yellow"] + ': ' + CORES["reset"])).upper()
 
-        if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
-            jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
-            if lista_navios != []:
-                print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
-            else:
-                print(CORES["green"] + CORES["bold"] + 'Todos os navios foram alocados!' + CORES["reset"])
-            framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
-            print(framework)
+            if posicao_suporta(jogador,CONFIGURACAO[navio],int(escolha_linha),LETRAS_NUMEROS[escolha_letra],escolha_orientacao):
+                jogador = posiciona_navios(jogador,CONFIGURACAO[navio],int(escolha_linha)-1,LETRAS_NUMEROS[escolha_letra],escolha_orientacao)
+                if lista_navios != []:
+                    print(CORES["green"] + CORES["bold"] + 'Navio alocado!' + CORES["reset"])
+                else:
+                    print(CORES["green"] + CORES["bold"] + 'Todos os navios foram alocados!' + CORES["reset"])
+                framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
+                print(framework)
+                suporta = True#
+            else:#
+                print('Não foi possível alocar navio em ' + escolha_letra + str(escolha_linha) + escolha_orientacao + ' !')#
         
     print(CORES["cyan"] + CORES["underline"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
   
@@ -89,47 +94,82 @@ while game_status:
         time.sleep(0.5)
         print(6 - numero)
     
+
     rodada = True
     while rodada:
         print('Coordenadas do seu disparo')
-        letra_disparo = input('Letra: ')
-        letra_disparo = letra_disparo.upper()
-        numero_da_letra_disparo = LETRAS_NUMEROS[letra_disparo]
-        linha_disparo = input('Linha: ')
+
+        tiro_autorizado = False#
+        while tiro_autorizado == False:#
+            letra_disparo = (input(CORES["yellow"] + 'Letra: ' + CORES["reset"])).upper()
+            while letra_disparo not in ALFABETO:
+                print(CORES["red"] + 'Letra inválida' + CORES["reset"])
+                letra_disparo = (input(CORES["yellow"] + 'Letra: ' + CORES["reset"])).upper()
+            numero_da_letra_disparo = LETRAS_NUMEROS[letra_disparo]
+
+            linha_disparo = input('Linha: ')
+            while linha_disparo not in NUMEROS:
+                print(CORES["red"] + 'Linha inválida' + CORES["reset"])
+                letra_disparo = (input(CORES["yellow"] + 'Linha: ' + CORES["reset"])).upper()
+
+            if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["blue"] + "▓▓▓" + CORES["reset"]) or mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["red"] + "▓▓▓" + CORES["reset"]):#
+                print ('Posição ' + letra_disparo + str(linha_disparo) + ' já bombardeada!')#
+            else:#
+                tiro_autorizado = True#
 
         letra_disparo_computador = random.choice(ALFABETO)
         letra_disparo_computador = letra_disparo_computador.upper()
         numero_da_letra_disparo_computador = LETRAS_NUMEROS[letra_disparo_computador]
         linha_disparo_computador = random.choice(NUMEROS)
 
-        if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO COMPUTADOR ATINGIDO
+        if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO COMPUTADOR ATINGIDO / JOGADOR ATIRANDO
             print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     BOOOOMMMMM!!!!')
-            mapa_computador[int(linha_disparo)-1][letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
+            mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
+            computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
+            framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
         else:
             print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     Água!')
+            computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["blue"] + "▓▓▓" + CORES["reset"]
+            framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
 
-        if jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO JOGADOR ATINGIDO
+        if jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO JOGADOR ATINGIDO / COMPUTADOR ATIRANDO
             print('Computador ------>>>>>>>   ' + letra_disparo_computador+linha_disparo_computador + '     BOOOOMMMMM!!!!')
-            jogador[int(linha_disparo_computador)-1][letra_disparo_computador] = CORES["red"] + "▓▓▓" + CORES["reset"]
+            jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] = CORES["red"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
         else:
             print('Computador ------>>>>>>>   ' + letra_disparo_computador+linha_disparo_computador + '     Água!')
+            jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] = CORES["blue"] + "▓▓▓" + CORES["reset"]
+            framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
+
+        print(framework)
 
         vitoria = foi_derrotado(mapa_computador)
         if vitoria == True:
             print('Você venceu!')
-            print('Já temos o futuro Jack Sparrow Jr!')
+            print(pirata_da_vitoria)
+            #print('Já temos o futuro Jack Sparrow Jr!')
             rodada = False
 
         derrota = foi_derrotado(jogador)
         if derrota == True:
             print('Você perdeu!')
+            print(cara_triste_de_derrota)
             print('Pena, mais sorte da próxima vez!')
             rodada = False
-        
-        print(framework)
 
     jogar_novamente = input('Jogar novamente? [s|n] ')
-    if jogar_novamente == 'n':
-        print('Até a próxima!')
-        game_status = False
+    jogar = True
+    while jogar:
+        jogar_novamente = jogar_novamente.lower()
+        if jogar_novamente == 's' or jogar_novamente == 'n':
+            if jogar_novamente == 'n':
+                print('Até a próxima!')
+                game_status = False
+                jogar = False
+            elif jogar_novamente == 's':
+                print('Que bom!')
+                print('Bom divertimento!')
+                jogar = False
+        else:
+            print('Resposta inválida')
+            jogar_novamente = input('Jogar novamente? [s|n] ')
