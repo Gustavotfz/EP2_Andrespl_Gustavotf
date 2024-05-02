@@ -117,11 +117,17 @@ while game_status:
             else:#
                 tiro_autorizado = True#
 
-        letra_disparo_computador = random.choice(ALFABETO)
-        letra_disparo_computador = letra_disparo_computador.upper()
-        numero_da_letra_disparo_computador = LETRAS_NUMEROS[letra_disparo_computador]
-        linha_disparo_computador = random.choice(NUMEROS)
-
+        tiro_computador_autorizado = False
+        while tiro_computador_autorizado == False:
+            letra_disparo_computador = random.choice(ALFABETO)
+            letra_disparo_computador = letra_disparo_computador.upper()
+            numero_da_letra_disparo_computador = LETRAS_NUMEROS[letra_disparo_computador]
+            linha_disparo_computador = random.choice(NUMEROS)
+            if jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] == (CORES["red"] + "▓▓▓" + CORES["reset"]) or jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] == (CORES["blue"] + "▓▓▓" + CORES["reset"]):
+                continue
+            else:
+                tiro_computador_autorizado = True
+                
         if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO COMPUTADOR ATINGIDO / JOGADOR ATIRANDO
             print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     BOOOOMMMMM!!!!')
             mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
