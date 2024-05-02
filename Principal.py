@@ -25,7 +25,7 @@ while game_status:
             print(quantidade_navio)
     
     escolha_pais = input(CORES["bold"] + CORES["yellow"] + "\nQual o número da nação da sua frota? " + CORES["reset"])
-    while int(escolha_pais) not in [numero for numero in range(1,6)]:
+    while escolha_pais not in [str(numero) for numero in range(1,6)]:
         print(CORES["red"] + "Opção inválida" + CORES["reset"])
         escolha_pais = input(CORES["bold"] + CORES["yellow"] + "\nQual o número da nação da sua frota? " + CORES["reset"])
     escolha_pais = int(escolha_pais)
