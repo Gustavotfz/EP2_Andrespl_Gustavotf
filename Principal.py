@@ -89,7 +89,7 @@ while game_status:
                 print(framework)
                 suporta = True
             else:
-                print(CORES["red"]+'Não foi possível alocar navio em '+CORES["reset"]+CORES["underline"] + escolha_letra + str(escolha_linha) + escolha_orientacao +CORES["reset"]+CORES["red"]+' !'+CORES["reset"])
+                print(CORES["red"]+'Não foi possível alocar navio em '+CORES["reset"]+CORES["underline"] + escolha_letra + str(escolha_linha) + ' ' + escolha_orientacao + CORES["reset"]+CORES["red"]+' !'+CORES["reset"])
         
     print(CORES["cyan"] + CORES["underline"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
   
@@ -135,23 +135,23 @@ while game_status:
         
         time.sleep(1)       
         if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO COMPUTADOR ATINGIDO / JOGADOR ATIRANDO
-            print(CORES["cyan"] + '\n\nJogador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo+linha_disparo +CORES["reset"]+CORES["bold"]+CORES["red"]+ '     BOOOOMMMMM!!!!')
+            print(CORES["bold"]+CORES["cyan"] + '\n\nJogador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo+linha_disparo +CORES["reset"]+CORES["bold"]+CORES["red"]+ '     BOOOOMMMMM!!!!')
             mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
             computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
         else:
-            print(CORES["cyan"] + '\n\nJogador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo +  linha_disparo +CORES["reset"]+CORES["bold"]+CORES["blue"]+ '     Água!')
+            print(CORES["bold"]+CORES["cyan"] + '\n\nJogador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo +  linha_disparo +CORES["reset"]+CORES["bold"]+CORES["blue"]+ '     Água!')
             #print('Jogador ------>>>>>>>   ' + letra_disparo+linha_disparo + '     Água!')
             computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["blue"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
 
         time.sleep(1)
         if jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO JOGADOR ATINGIDO / COMPUTADOR ATIRANDO
-            print(CORES["red"] + 'Computador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo_computador+linha_disparo_computador +CORES["reset"]+CORES["bold"]+CORES["red"]+'     BOOOOMMMMM!!!!')
+            print(CORES["cyan"] + 'Computador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo_computador+linha_disparo_computador +CORES["reset"]+CORES["bold"]+CORES["red"]+'     BOOOOMMMMM!!!!')
             jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] = CORES["red"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
         else:
-            print(CORES["red"] + 'Computador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo_computador+linha_disparo_computador+CORES["reset"] +CORES["bold"]+CORES["blue"]+ '     Água!')
+            print(CORES["cyan"] + 'Computador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo_computador+linha_disparo_computador+CORES["reset"] +CORES["bold"]+CORES["blue"]+ '     Água!')
             jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] = CORES["blue"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
 
