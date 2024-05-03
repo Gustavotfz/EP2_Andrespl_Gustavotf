@@ -11,14 +11,17 @@ game_status = True
 
 while game_status:
     pygame.mixer.music.play(-1) #Toca a música de Fundo até o jogador decidir parar de jogar
+    
+    #Printando o Título e as mensagens iniciais
     titulo = CORES["cyan"] + " =====================================\n|                                     |\n| Bem-vindo ao INSPER - Batalha Naval |\n|                                     |\n =======   xxxxxxxxxxxxxxxxx   ======= \n"
     msg_inicial = CORES["bold"] + CORES["yellow"] + "Iniciando o Jogo!\n"
     print (titulo + CORES["reset"])
     print(msg_inicial + CORES["reset"]) 
-    pais_computador = random.choice(list(PAISES.keys()))
+    pais_computador = random.choice(list(PAISES.keys())) #Escolhe um país aleatório para o Computador
     print(CORES["magenta"] + "Computador está alocando os navios de batalhado país", CORES["bold"]+CORES["underline"]+CORES["red"] + pais_computador + CORES["reset"] + CORES["magenta"] + " ..." + CORES["reset"])
     print(CORES["magenta"] + "Computador já está em posição de batalha!\n" + CORES["reset"])
 
+    #Printando as opções de países e as frotas de navios para escolher
     for Numero in NUMERO_PAISES:
         Numero_Pais = CORES["bold"] + str(Numero) + ': ' + CORES["cyan"] + CORES["underline"] + NUMERO_PAISES[Numero] + CORES["reset"]
         print(Numero_Pais)
@@ -27,16 +30,17 @@ while game_status:
             quantidade_navio = '   ' +  str(PAISES[pais][navio]) + ': ' + CORES["blue"] + navio + CORES["reset"]
             print(quantidade_navio)
     
+    #Conferência da escolha do país da frota de navios do jogador
     escolha_pais = input(CORES["bold"] + CORES["yellow"] + "Qual o número da nação da sua frota? " + CORES["reset"])
     while escolha_pais not in [str(numero) for numero in range(1,6)]:
         print(CORES["red"] + "Opção inválida" + CORES["reset"])
         escolha_pais = input(CORES["bold"] + CORES["yellow"] + "Qual o número da nação da sua frota? " + CORES["reset"])
     escolha_pais = int(escolha_pais)
 
-    print(separador)
+    print(separador) #Só pela estética =)
 
-    mapa_computador = cria_mapa(10)
-    mapa_jogador = cria_mapa(10)
+    mapa_computador = cria_mapa(10) #Criando o mapa do computador
+    jogador = cria_mapa(10) #Criando o mapa do jogador
 
     lista_blocos = []
     for navio in PAISES[pais_computador]:
@@ -44,7 +48,6 @@ while game_status:
             lista_blocos.append(CONFIGURACAO[navio])
     mapa_computador = aloca_navios(mapa_computador, lista_blocos)
     computador = cria_mapa(10)
-    jogador = mapa_jogador
 
     framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
     print(framework)
