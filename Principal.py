@@ -89,7 +89,7 @@ while game_status:
                 print(framework)
                 suporta = True
             else:
-                print(CORES["red"]+'Não foi possível alocar navio em '+CORES["reset"]+CORES["underline"] + escolha_letra + str(escolha_linha) + escolha_orientacao +CORES["reset"]+CORES["red"] ' !')
+                print(CORES["red"]+'Não foi possível alocar navio em '+CORES["reset"]+CORES["underline"] + escolha_letra + str(escolha_linha) + escolha_orientacao +CORES["reset"]+CORES["red"]+' !'+CORES["reset"])
         
     print(CORES["cyan"] + CORES["underline"] + "Iniciando a " + CORES["bold"] + "Batalha Naval\n" + CORES["reset"])
   
