@@ -1,14 +1,16 @@
 #IMPORTS
-from Funcoes import *
-from Constantes import *
 import time
 import random
 import pygame
+pygame.init()
+from Funcoes import *
+from Constantes import *
 ##########################################################################
 
 game_status = True
 
 while game_status:
+    pygame.mixer.music.play()
     titulo = CORES["cyan"] + " =====================================\n|                                     |\n| Bem-vindo ao INSPER - Batalha Naval |\n|                                     |\n =======   xxxxxxxxxxxxxxxxx   ======= \n"
     msg_inicial = CORES["bold"] + CORES["yellow"] + "Iniciando o Jogo!\n"
     print (titulo + CORES["reset"])

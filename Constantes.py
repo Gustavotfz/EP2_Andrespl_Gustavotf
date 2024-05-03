@@ -1,3 +1,4 @@
+import pygame
 # quantidade de blocos por modelo de navio
 CONFIGURACAO = {
     'Destroyer': 3,
