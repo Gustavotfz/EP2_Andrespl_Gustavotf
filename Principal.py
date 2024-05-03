@@ -166,19 +166,14 @@ while game_status:
             print('Pena, mais sorte da próxima vez!')
             rodada = False
 
-    jogar_novamente = input('Jogar novamente? [s|n] ')
-    jogar = True
-    while jogar:
-        jogar_novamente = jogar_novamente.lower()
-        if jogar_novamente == 's' or jogar_novamente == 'n':
-            if jogar_novamente == 'n':
-                print('Até a próxima!')
-                game_status = False
-                jogar = False
-            elif jogar_novamente == 's':
-                print('Que bom!')
-                print('Bom divertimento!')
-                jogar = False
-        else:
-            print('Resposta inválida')
-            jogar_novamente = input('Jogar novamente? [s|n] ')
+    
+    jogar_novamente = (input('Jogar novamente? [s|n] ')).lower()
+    while jogar_novamente not in ["s","n"]:
+        print(CORES["red"] + "Resposta inválida" + CORES["reset"])
+        jogar_novamente = (input('Jogar novamente? [s|n] ')).lower()
+    if jogar_novamente == "n":
+        print(CORES["cyan"] + CORES["bold"] + CORES["underline"] + '\nAté a próxima!' + CORES["reset"])
+        game_status = False
+    else:
+        print(CORES["cyan"] + CORES["bold"] + CORES["underline"] + '\nQue bom! \nBom divertimento!' + CORES["reset"])
+    continue
