@@ -66,10 +66,10 @@ while game_status:
 
         suporta = False
         while suporta == False:
-            escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
+            escolha_letra = (input(CORES["yellow"] + 'Informe uma letra: ' + CORES["reset"])).upper()
             while escolha_letra not in ALFABETO:
                 print(CORES["red"] + 'Letra inválida' + CORES["reset"])
-                escolha_letra = (input(CORES["yellow"] + '\nInforme uma letra: ' + CORES["reset"])).upper()
+                escolha_letra = (input(CORES["yellow"] + 'Informe uma letra: ' + CORES["reset"])).upper()
 
             escolha_linha = input(CORES["yellow"] + 'Informe a linha: ' + CORES["reset"])
             while escolha_linha not in NUMEROS:
