@@ -175,10 +175,10 @@ while game_status:
             rodada = False
 
     
-    jogar_novamente = (input(CORES["cyan"]+'Jogar novamente? [s|n] '+CORES["reset"])).lower()
+    jogar_novamente = (input(CORES["cyan"]+'Jogar novamente?'+CORES["yellow"] +'[s|n] '+CORES["reset"])).lower()
     while jogar_novamente not in ["s","n"]:
         print(CORES["red"] + "Resposta inválida" + CORES["reset"])
-        jogar_novamente = (input('Jogar novamente? [s|n] ')).lower()
+        jogar_novamente = (input(CORES["cyan"]+'Jogar novamente?'+CORES["yellow"] +'[s|n] '+CORES["reset"])).lower()
     if jogar_novamente == "n":
         print(CORES["cyan"] + CORES["bold"] + CORES["underline"] + '\nAté a próxima!' + CORES["reset"])
         game_status = False
