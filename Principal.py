@@ -3,6 +3,7 @@ from Funcoes import *
 from Constantes import *
 import time
 import random
+import pygame
 ##########################################################################
 
 game_status = True
