@@ -180,8 +180,8 @@ while game_status:
         print(CORES["red"] + "Resposta inválida" + CORES["reset"])
         jogar_novamente = (input(CORES["cyan"]+'Jogar novamente?'+CORES["yellow"] +'[s|n] '+CORES["reset"])).lower()
     if jogar_novamente == "n":
-        print(CORES["cyan"] + CORES["bold"] + CORES["underline"] + '\nAté a próxima!' + CORES["reset"])
+        print(CORES["magenta"] + CORES["bold"] + CORES["underline"] + '\nAté a próxima!' + CORES["reset"])
         game_status = False
     else:
-        print(CORES["magenta"] + CORES["bold"] + CORES["underline"] + '\nQue bom! \nBom divertimento!' + CORES["reset"])
+        print(CORES["magenta"] + CORES["bold"] + CORES["underline"] + '\nQue bom! \nBom divertimento!\n' + CORES["reset"])
     continue
