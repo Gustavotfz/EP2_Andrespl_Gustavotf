@@ -9,9 +9,6 @@ def cria_mapa(tamanho_matriz):
 ##########################################################################
 
 def posicao_suporta(mapa, blocos, linha, coluna, orientacao):
-    for x in LETRAS_NUMEROS:
-        if x == coluna:
-            coluna = LETRAS_NUMEROS[x]
     if ((orientacao == "H") and ((int(coluna) + int(blocos)) > len(mapa))) or ((orientacao == "V") and ((int(linha) + int(blocos))>len(mapa))) or (int(linha) > (len(mapa)-1)) or (int(coluna) > (len(mapa)-1)): 
         return False
     for bloco in range(blocos):
