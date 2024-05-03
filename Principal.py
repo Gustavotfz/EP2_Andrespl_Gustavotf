@@ -133,7 +133,7 @@ while game_status:
             else:
                 tiro_computador_autorizado = True
         
-        time.sleep(1)       
+        time.sleep(0.75)       
         if mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO COMPUTADOR ATINGIDO / JOGADOR ATIRANDO
             print(CORES["cyan"] + '\n\nJogador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo+linha_disparo +CORES["reset"]+CORES["bold"]+CORES["red"]+ '     BOOOOMMMMM!!!!')
             mapa_computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["red"] + "▓▓▓" + CORES["reset"]
@@ -145,7 +145,7 @@ while game_status:
             computador[int(linha_disparo)-1][numero_da_letra_disparo] = CORES["blue"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
 
-        time.sleep(1)
+        time.sleep(0.5)
         if jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] == (CORES["green"] + "▓▓▓" + CORES["reset"]): #NAVIO JOGADOR ATINGIDO / COMPUTADOR ATIRANDO
             print(CORES["red"] + 'Computador  '+CORES["reset"] + arma + '   ' +CORES["underline"]+ letra_disparo_computador+linha_disparo_computador +CORES["reset"]+CORES["bold"]+CORES["red"]+'     BOOOOMMMMM!!!!')
             jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] = CORES["red"] + "▓▓▓" + CORES["reset"]
@@ -155,7 +155,7 @@ while game_status:
             jogador[int(linha_disparo_computador)-1][numero_da_letra_disparo_computador] = CORES["blue"] + "▓▓▓" + CORES["reset"]
             framework = gera_framework(computador, jogador, pais_computador, escolha_pais)
 
-        time.sleep(1)
+        time.sleep(0.75)
         print(framework)
 
         vitoria = foi_derrotado(mapa_computador)
