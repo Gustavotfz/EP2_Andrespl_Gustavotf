@@ -183,5 +183,5 @@ while game_status:
         print(CORES["cyan"] + CORES["bold"] + CORES["underline"] + '\nAté a próxima!' + CORES["reset"])
         game_status = False
     else:
-        print(CORES["cyan"] + CORES["bold"] + CORES["underline"] + '\nQue bom! \nBom divertimento!' + CORES["reset"])
+        print(CORES["magenta"] + CORES["bold"] + CORES["underline"] + '\nQue bom! \nBom divertimento!' + CORES["reset"])
     continue
