@@ -8,7 +8,7 @@ ROTEIRO DO JOGO
  7 - Criar Mapa do Computador e do Usuário (feito)
  8 - Alocar Navios do Computador (feito)
  9 - Gerar Framework do Jogo (feito)
-10 - Adicionar, via escolha, os navios do Usuário
+10 - Adicionar, via escolha, os navios do Usuário (feito)
 11 - Iniciar Jogo (feito)
 12 - Lance do Computador (feito)
 13 - Lance do Usuário (feito)
@@ -16,6 +16,9 @@ ROTEIRO DO JOGO
 15 - Animação de Vitória ou Derrota (feito)
 16 - Perguntar se quer jogar novamente (feito)
 17 - Adicionar Cores às mensagens do Terminal (feito)
-18 - Adicionar Timer de delay dos prints
-19 - Adicionar métodos para conferir os inputs dos Usuários
-20 - Comentar o Código
+18 - Adicionar Timer de delay dos prints (feito)
+19 - Adicionar métodos para conferir os inputs dos Usuários (feito)
+20 - Adicionar Música
+21 - Comentar o Código (feito)
+
+Jogo Encerrado
